@@ -1,4 +1,4 @@
-<!DOCTYPE html>h
+<!DOCTYPE html>
 <!-- Ty Trippany Portfolio -->
 <html lang="en">
 <head>
@@ -6,24 +6,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ty Trippany | CX Operations Leader</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600;1,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #07070f;
-      --surface: #0e0e1c;
-      --surface2: #14142a;
-      --border: rgba(255,255,255,0.07);
-      --text: #e8e8f8;
-      --text-muted: #6e6e9a;
-      --accent: #00d9f5;
-      --accent2: #8b5cf6;
-      --gradient: linear-gradient(135deg, #00d9f5 0%, #8b5cf6 100%);h
+      --cream: #f0ebe0;
+      --cream2: #e8e1d4;
+      --navy: #111c35;
+      --navy-mid: #1e3057;
+      --blue-accent: #2d5090;
+      --text: #1a2744;
+      --text-muted: #5a6a8a;
+      --gold: #c8a96e;
+      --border: rgba(26,39,68,0.12);
     }
 
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body {
-      background: var(--bg);
+      background: var(--cream);
       color: var(--text);
       font-family: 'Inter', sans-serif;
       line-height: 1.6;
@@ -34,30 +34,31 @@
     nav {
       position: fixed;
       top: 0; left: 0; right: 0;
-      z-index: 100;
+      z-index: 200;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 1.35rem 3rem;
+      padding: 1.2rem 3rem;
       transition: background 0.4s, border-bottom 0.4s, backdrop-filter 0.4s;
     }
     nav.scrolled {
-      background: rgba(7, 7, 15, 0.88);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
+      background: rgba(240, 235, 224, 0.95);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border);
     }
     .nav-logo {
-      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-family: 'Inter', sans-serif;
       font-weight: 700;
-      font-size: 0.95rem;
+      font-size: 0.8rem;
+      letter-spacing: 0.18em;
+      color: white;
       text-decoration: none;
-      letter-spacing: 0.12em;
-      background: var(--gradient);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+      background: var(--navy);
+      padding: 0.5rem 0.75rem;
+      transition: background 0.2s;
     }
+    nav.scrolled .nav-logo { background: var(--navy); color: white; }
     .nav-links {
       display: flex;
       align-items: center;
@@ -65,638 +66,551 @@
       list-style: none;
     }
     .nav-links a {
-      font-size: 0.75rem;
-      letter-spacing: 0.14em;
+      font-size: 0.7rem;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
-      color: var(--text-muted);
+      color: rgba(255,255,255,0.7);
       text-decoration: none;
       transition: color 0.2s;
     }
-    .nav-links a:hover { color: var(--text); }
+    .nav-links a:hover { color: white; }
+    nav.scrolled .nav-links a { color: var(--text-muted); }
+    nav.scrolled .nav-links a:hover { color: var(--text); }
     .nav-btn {
       background: transparent;
-      border: 1px solid rgba(0,217,245,0.5);
-      color: var(--accent);
-      padding: 0.45rem 1.1rem;
-      font-size: 0.72rem;
-      letter-spacing: 0.12em;
+      border: 1px solid rgba(255,255,255,0.5);
+      color: white;
+      padding: 0.4rem 1.1rem;
+      font-size: 0.68rem;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
       text-decoration: none;
-      border-radius: 3px;
-      transition: background 0.2s, color 0.2s;
+      transition: background 0.2s, color 0.2s, border-color 0.2s;
       font-family: 'Inter', sans-serif;
     }
-    .nav-btn:hover { background: var(--accent); color: var(--bg); }
+    .nav-btn:hover { background: white; color: var(--navy); border-color: white; }
+    nav.scrolled .nav-btn { border-color: var(--navy); color: var(--navy); }
+    nav.scrolled .nav-btn:hover { background: var(--navy); color: white; }
 
     /* ── HERO ── */
     .hero {
-      min-height: 100vh;
       display: grid;
       grid-template-columns: 1fr 1fr;
-      position: relative;
+      min-height: 100vh;
     }
+
+    /* LEFT: sticky photo panel */
     .hero-left {
-      position: relative;
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      background-image: url('Headshot.JPG');
+      background-size: cover;
+      background-position: center top;
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
-      padding: 5.5rem 3.5rem 4.5rem;
-      overflow: hidden;
-      background: var(--bg);
+      padding: 3.5rem;
     }
     .hero-left::before {
       content: '';
       position: absolute;
       inset: 0;
-      background:
-        radial-gradient(ellipse 90% 70% at 15% 85%, rgba(0,217,245,0.07) 0%, transparent 55%),
-        radial-gradient(ellipse 70% 70% at 85% 15%, rgba(139,92,246,0.06) 0%, transparent 55%);
-      pointer-events: none;
+      background: linear-gradient(
+        to bottom,
+        rgba(10, 15, 30, 0.35) 0%,
+        rgba(10, 15, 30, 0.55) 60%,
+        rgba(10, 15, 30, 0.82) 100%
+      );
     }
-    /* Subtle grid pattern */
-    .hero-left::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background-image:
-        linear-gradient(rgba(255,255,255,0.018) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.018) 1px, transparent 1px);
-      background-size: 60px 60px;
-      pointer-events: none;
-    }
+    .hero-left > * { position: relative; }
+
     .hero-status {
       display: inline-flex;
       align-items: center;
       gap: 0.55rem;
-      font-size: 0.7rem;
-      letter-spacing: 0.16em;
+      font-size: 0.68rem;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
-      color: var(--text-muted);
-      margin-bottom: 2.25rem;
-      position: relative;
-      z-index: 1;
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 1.4rem;
     }
     .hero-status::before {
       content: '';
       width: 7px; height: 7px;
+      background: #4cde8a;
       border-radius: 50%;
-      background: #4ade80;
-      box-shadow: 0 0 10px #4ade8088;
-      animation: pulse-dot 2.2s ease-in-out infinite;
-    }
-    @keyframes pulse-dot {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.5; transform: scale(0.8); }
     }
     .hero-name {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      font-weight: 800;
-      line-height: 0.9;
-      position: relative;
-      z-index: 1;
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3.5rem, 5.5vw, 5.5rem);
+      line-height: 1.0;
+      margin-bottom: 1.2rem;
     }
     .hero-name .first {
       display: block;
-      font-size: clamp(4.5rem, 8.5vw, 7.5rem);
-      color: var(--text);
-      letter-spacing: -0.03em;
-      font-weight: 800;
+      color: white;
+      font-weight: 700;
     }
     .hero-name .last {
       display: block;
-      font-size: clamp(4.5rem, 8.5vw, 7.5rem);
-      letter-spacing: -0.03em;
-      font-weight: 300;
-      background: var(--gradient);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+      color: #7aadff;
+      font-style: italic;
+      font-weight: 700;
     }
     .hero-divider {
-      width: 50px;
+      width: 2.5rem;
       height: 2px;
-      background: var(--gradient);
-      margin: 1.75rem 0;
-      position: relative;
-      z-index: 1;
+      background: var(--gold);
+      margin-bottom: 1.2rem;
     }
     .hero-tagline {
-      font-size: 0.95rem;
-      color: var(--text-muted);
-      max-width: 360px;
-      line-height: 1.75;
-      position: relative;
-      z-index: 1;
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.72);
+      max-width: 26rem;
+      line-height: 1.7;
+      margin-bottom: 1.2rem;
     }
     .hero-location {
-      margin-top: 2.25rem;
-      font-size: 0.7rem;
-      letter-spacing: 0.14em;
+      font-size: 0.68rem;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
-      color: var(--text-muted);
-      position: relative;
-      z-index: 1;
+      color: rgba(255,255,255,0.45);
     }
 
-    /* Hero right panel */
+    /* RIGHT: cream content panel */
     .hero-right {
+      background: var(--cream);
+      padding: 7rem 4rem 5rem 4.5rem;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      padding: 6.5rem 3.5rem 4.5rem;
-      background: var(--surface);
-      border-left: 1px solid var(--border);
-      position: relative;
     }
     .hero-profile {
       display: flex;
       align-items: center;
-      gap: 1.2rem;
+      gap: 1rem;
       margin-bottom: 2rem;
     }
     .profile-avatar {
-      width: 62px; height: 62px;
+      width: 56px; height: 56px;
       border-radius: 50%;
-      background: var(--gradient);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      font-weight: 800;
-      font-size: 1.15rem;
-      color: #fff;
+      overflow: hidden;
       flex-shrink: 0;
-      position: relative;
+      border: 2px solid var(--border);
     }
     .profile-avatar img {
       width: 100%; height: 100%;
-      border-radius: 50%;
       object-fit: cover;
       object-position: center top;
     }
-    .profile-avatar::after {
-      content: '';
-      position: absolute;
-      inset: -3px;
-      border-radius: 50%;
-      background: var(--gradient);
-      z-index: -1;
-      opacity: 0.25;
-      filter: blur(8px);
-    }
     .profile-label {
-      font-size: 0.68rem;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--accent);
-    }
-    .hero-headline {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      font-weight: 700;
-      font-size: clamp(1.35rem, 2.1vw, 1.85rem);
-      line-height: 1.25;
-      color: var(--text);
-      margin-bottom: 1.35rem;
-    }
-    .hero-headline em {
-      font-style: italic;
-      background: var(--gradient);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-    .hero-bio {
-      font-size: 0.875rem;
-      color: var(--text-muted);
-      line-height: 1.82;
-      margin-bottom: 2rem;
-      border-left: 2px solid var(--accent);
-      padding-left: 1rem;
-    }
-    .hero-stats {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.25rem;
-      margin-bottom: 2rem;
-    }
-    .stat-value {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      font-weight: 800;
-      font-size: 1.8rem;
-      line-height: 1;
-      background: var(--gradient);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-    .stat-label {
-      font-size: 0.67rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      margin-top: 0.3rem;
-    }
-    .hero-ctas {
-      display: flex;
-      gap: 0.75rem;
-      flex-wrap: wrap;
-    }
-    .btn-primary {
-      background: var(--gradient);
-      color: #fff;
-      padding: 0.7rem 1.5rem;
-      font-size: 0.76rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      text-decoration: none;
-      border-radius: 3px;
-      font-weight: 600;
-      font-family: 'Inter', sans-serif;
-      transition: opacity 0.2s, transform 0.2s;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-    }
-    .btn-primary:hover { opacity: 0.84; transform: translateY(-1px); }
-    .btn-secondary {
-      background: transparent;
-      border: 1px solid var(--border);
-      color: var(--text-muted);
-      padding: 0.7rem 1.5rem;
-      font-size: 0.76rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      text-decoration: none;
-      border-radius: 3px;
-      font-family: 'Inter', sans-serif;
-      transition: border-color 0.2s, color 0.2s;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-    }
-    .btn-secondary:hover { border-color: rgba(255,255,255,0.2); color: var(--text); }
-
-    /* ── MARQUEE ── */
-    .marquee-wrap {
-      background: var(--surface);
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-      overflow: hidden;
-      padding: 0.95rem 0;
-    }
-    .marquee-track {
-      display: flex;
-      animation: marquee-scroll 36s linear infinite;
-      width: max-content;
-    }
-    .marquee-item {
-      display: inline-flex;
-      align-items: center;
-      gap: 1.75rem;
-      padding: 0 1.75rem;
-      font-size: 0.7rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      white-space: nowrap;
-    }
-    .marquee-item::after {
-      content: '·';
-      color: var(--accent);
-      font-size: 1.4rem;
-      line-height: 0;
-      margin-top: 2px;
-    }
-    @keyframes marquee-scroll {
-      from { transform: translateX(0); }
-      to { transform: translateX(-50%); }
-    }
-
-    /* ── SHARED SECTION STYLES ── */
-    section { padding: 6rem 3.5rem; }
-    .section-counter {
       font-size: 0.68rem;
       letter-spacing: 0.18em;
       text-transform: uppercase;
       color: var(--text-muted);
-      margin-bottom: 0.75rem;
     }
-    .section-title {
-      font-family: 'Plus Jakarta Sans', sans-serif;
+    .hero-headline {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.6rem, 2.4vw, 2.2rem);
+      line-height: 1.25;
+      color: var(--navy);
+      margin-bottom: 1.5rem;
+      font-weight: 600;
+    }
+    .hero-headline em {
+      color: var(--blue-accent);
+      font-style: italic;
+    }
+    .hero-bio-block {
+      border-left: 3px solid var(--blue-accent);
+      padding-left: 1.2rem;
+      margin-bottom: 2rem;
+    }
+    .hero-bio {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.8;
+    }
+    .hero-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.4rem 2.5rem;
+      margin-bottom: 2.2rem;
+    }
+    .stat-value {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
       font-weight: 700;
-      font-size: clamp(2rem, 3.8vw, 2.9rem);
-      color: var(--text);
-      line-height: 1.15;
-      margin-bottom: 3.5rem;
-      letter-spacing: -0.025em;
+      color: var(--navy);
+      line-height: 1;
+    }
+    .stat-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-top: 0.25rem;
+    }
+    .hero-ctas {
+      display: flex;
+      gap: 0.85rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.8rem;
+    }
+    .btn-primary {
+      background: var(--navy);
+      color: white;
+      padding: 0.75rem 1.6rem;
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: background 0.2s;
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+    }
+    .btn-primary:hover { background: var(--navy-mid); }
+    .btn-secondary {
+      background: transparent;
+      border: 1px solid var(--navy);
+      color: var(--navy);
+      padding: 0.73rem 1.4rem;
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: background 0.2s, color 0.2s;
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+    }
+    .btn-secondary:hover { background: var(--navy); color: white; }
+    .hero-specialty {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      line-height: 1.7;
     }
 
+    /* ── MARQUEE ── */
+    .marquee-wrap {
+      background: var(--navy);
+      padding: 1rem 0;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+    .marquee-track {
+      display: inline-flex;
+      gap: 2.5rem;
+      animation: marquee 32s linear infinite;
+    }
+    .marquee-item {
+      font-size: 0.68rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+      flex-shrink: 0;
+    }
+    .marquee-item::after {
+      content: '—';
+      margin-left: 2.5rem;
+      color: var(--gold);
+    }
+    @keyframes marquee {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    /* ── SECTIONS ── */
+    section { scroll-margin-top: 0; }
+
+    .section-inner {
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 6rem 4rem;
+    }
+    .section-counter {
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--blue-accent);
+      margin-bottom: 0.75rem;
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.5s, transform 0.5s;
+    }
+    .section-counter.visible { opacity: 1; transform: none; }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      font-weight: 700;
+      color: inherit;
+      margin-bottom: 3rem;
+      line-height: 1.15;
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.55s 0.07s, transform 0.55s 0.07s;
+    }
+    .section-title.visible { opacity: 1; transform: none; }
+
+    /* REVEAL */
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s, transform 0.6s;
+    }
+    .reveal.visible { opacity: 1; transform: none; }
+
     /* ── EXPERIENCE ── */
-    .experience-section { background: var(--bg); }
-    .timeline { display: flex; flex-direction: column; }
+    .experience-section { background: var(--cream); }
+    .experience-section .section-inner { border-top: 1px solid var(--border); }
+    .experience-section .section-title { color: var(--navy); }
+
+    .timeline { display: flex; flex-direction: column; gap: 3.5rem; }
     .timeline-item {
       display: grid;
-      grid-template-columns: 210px 1fr;
+      grid-template-columns: 11rem 1fr;
       gap: 2.5rem;
-      padding: 2.75rem 0;
+      padding-bottom: 3.5rem;
       border-bottom: 1px solid var(--border);
     }
-    .timeline-item:first-child { border-top: 1px solid var(--border); }
+    .timeline-item:last-child { border-bottom: none; padding-bottom: 0; }
     .timeline-meta {
       font-size: 0.8rem;
       color: var(--text-muted);
-      line-height: 1.65;
+      line-height: 1.6;
       padding-top: 0.2rem;
     }
     .timeline-meta strong {
       display: block;
       color: var(--text);
-      font-size: 0.82rem;
       font-weight: 600;
-      margin-bottom: 0.3rem;
+      margin-bottom: 0.35rem;
     }
     .timeline-content h3 {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      font-weight: 700;
-      font-size: 1.1rem;
-      color: var(--text);
+      font-family: 'Playfair Display', serif;
+      font-size: 1.35rem;
+      font-weight: 600;
+      color: var(--navy);
       margin-bottom: 0.2rem;
-      letter-spacing: -0.025em;
     }
     .timeline-company {
-      font-size: 0.8rem;
-      color: var(--accent);
-      letter-spacing: 0.04em;
-      margin-bottom: 0.9rem;
+      font-size: 0.78rem;
+      color: var(--blue-accent);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 0.85rem;
     }
     .timeline-content p {
-      font-size: 0.875rem;
+      font-size: 0.88rem;
       color: var(--text-muted);
-      line-height: 1.78;
+      line-height: 1.8;
       margin-bottom: 0.9rem;
     }
-    .bullets {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-      margin-bottom: 1rem;
-    }
+    .bullets { list-style: none; margin-bottom: 1rem; }
     .bullets li {
-      font-size: 0.845rem;
+      font-size: 0.86rem;
       color: var(--text-muted);
-      line-height: 1.68;
-      padding-left: 1.15rem;
+      line-height: 1.7;
+      padding-left: 1.4rem;
+      margin-bottom: 0.4rem;
       position: relative;
     }
     .bullets li::before {
-      content: '→';
+      content: '—';
       position: absolute;
       left: 0;
-      color: var(--accent);
-      font-size: 0.72rem;
-      top: 0.12rem;
+      color: var(--gold);
     }
-    .tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.4rem;
-    }
+    .tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
     .tag {
-      font-size: 0.62rem;
-      letter-spacing: 0.1em;
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
       color: var(--text-muted);
       border: 1px solid var(--border);
-      padding: 0.2rem 0.6rem;
-      border-radius: 2px;
-      transition: border-color 0.2s, color 0.2s;
+      padding: 0.28rem 0.65rem;
     }
-    .tag:hover { border-color: rgba(0,217,245,0.3); color: var(--accent); }
 
-    /* ── FEATURED IMPACT ── */
-    .work-section { background: var(--surface); }
+    /* ── IMPACT ── */
+    .work-section { background: var(--navy); }
+    .work-section .section-counter { color: var(--gold); }
+    .work-section .section-title { color: white; }
     .work-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1.5rem;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      margin-top: -1rem;
     }
     .work-card {
-      background: var(--surface2);
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      padding: 2.25rem;
-      position: relative;
-      overflow: hidden;
-      transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.07);
+      padding: 2.2rem 2.2rem;
+      transition: background 0.2s;
     }
-    .work-card:hover {
-      border-color: rgba(0,217,245,0.25);
-      transform: translateY(-3px);
-      box-shadow: 0 12px 40px rgba(0,0,0,0.3);
-    }
-    .work-card::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 2px;
-      background: var(--gradient);
-      opacity: 0;
-      transition: opacity 0.3s;
-    }
-    .work-card:hover::before { opacity: 1; }
+    .work-card:hover { background: rgba(255,255,255,0.08); }
     .work-num {
       font-size: 0.62rem;
-      letter-spacing: 0.16em;
+      letter-spacing: 0.2em;
       text-transform: uppercase;
-      color: var(--text-muted);
-      margin-bottom: 1rem;
+      color: var(--gold);
+      margin-bottom: 0.85rem;
     }
     .work-card h3 {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      font-weight: 700;
-      font-size: 1.1rem;
-      color: var(--text);
-      margin-bottom: 0.3rem;
-      letter-spacing: -0.025em;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: white;
+      margin-bottom: 0.5rem;
+      line-height: 1.3;
     }
     .work-metric {
-      font-size: 0.76rem;
-      color: var(--accent);
-      letter-spacing: 0.04em;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      color: rgba(255,255,255,0.45);
       margin-bottom: 1rem;
     }
     .work-card p {
-      font-size: 0.87rem;
-      color: var(--text-muted);
-      line-height: 1.78;
-      margin-bottom: 1rem;
+      font-size: 0.86rem;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.8;
+      margin-bottom: 1.1rem;
     }
-    .work-bullets {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 0.4rem;
-    }
+    .work-bullets { list-style: none; }
     .work-bullets li {
-      font-size: 0.83rem;
-      color: var(--text-muted);
-      padding-left: 1rem;
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.6;
+      padding-left: 1.2rem;
       position: relative;
-      line-height: 1.65;
+      margin-bottom: 0.35rem;
     }
     .work-bullets li::before {
-      content: '·';
+      content: '—';
       position: absolute;
       left: 0;
-      color: var(--accent);
-      font-weight: 900;
-      font-size: 1rem;
-      line-height: 1.2;
+      color: var(--gold);
     }
 
     /* ── SKILLS ── */
-    .skills-section { background: var(--bg); }
+    .skills-section { background: var(--cream2); }
+    .skills-section .section-title { color: var(--navy); }
     .skills-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 2.5rem;
+      gap: 3rem;
     }
     .skills-group h4 {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      font-weight: 700;
-      font-size: 0.78rem;
-      letter-spacing: 0.1em;
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
       text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 1.35rem;
-      padding-bottom: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 1.4rem;
+      padding-bottom: 0.75rem;
       border-bottom: 1px solid var(--border);
     }
-    .skills-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 0.65rem;
-    }
+    .skills-list { list-style: none; }
     .skills-list li {
-      font-size: 0.875rem;
+      font-size: 0.86rem;
       color: var(--text-muted);
-      display: flex;
-      align-items: center;
-      gap: 0.55rem;
+      line-height: 1.6;
+      padding: 0.4rem 0 0.4rem 1.2rem;
+      position: relative;
+      border-bottom: 1px solid rgba(26,39,68,0.06);
       transition: color 0.2s;
     }
+    .skills-list li:last-child { border-bottom: none; }
     .skills-list li::before {
-      content: '';
-      width: 4px; height: 4px;
-      border-radius: 50%;
-      background: var(--accent);
-      flex-shrink: 0;
-      opacity: 0.6;
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--gold);
     }
     .skills-list li:hover { color: var(--text); }
 
     /* ── CONTACT ── */
-    .contact-section {
-      background: var(--surface);
-      text-align: center;
-    }
-    .contact-inner {
-      max-width: 680px;
-      margin: 0 auto;
-    }
-    .contact-section .section-counter { justify-content: center; display: block; }
-    .contact-section .section-title { margin-bottom: 1rem; }
-    .contact-title-grad {
-      font-style: italic;
-      background: var(--gradient);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
+    .contact-section { background: var(--navy); }
+    .contact-section .section-counter { color: var(--gold); }
+    .contact-section .section-title { color: white; }
+    .contact-inner { max-width: 600px; margin: 0 auto; padding: 6rem 4rem; text-align: center; }
     .contact-desc {
-      font-size: 0.93rem;
-      color: var(--text-muted);
-      line-height: 1.78;
-      margin-bottom: 2.75rem;
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.8;
+      margin-bottom: 2.5rem;
     }
     .contact-links {
       display: flex;
-      justify-content: center;
-      gap: 2.5rem;
-      flex-wrap: wrap;
+      flex-direction: column;
+      gap: 0;
       margin-bottom: 2.5rem;
+      text-align: left;
+      border-top: 1px solid rgba(255,255,255,0.08);
     }
     .contact-link {
       display: flex;
-      flex-direction: column;
+      justify-content: space-between;
       align-items: center;
-      gap: 0.3rem;
+      padding: 1rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
       text-decoration: none;
+      transition: padding-left 0.2s;
     }
+    .contact-link:hover { padding-left: 0.5rem; }
     .cl-label {
-      font-size: 0.62rem;
-      letter-spacing: 0.16em;
+      font-size: 0.65rem;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
-      color: var(--text-muted);
+      color: var(--gold);
     }
     .cl-value {
       font-size: 0.88rem;
-      color: var(--text);
+      color: rgba(255,255,255,0.7);
       transition: color 0.2s;
     }
-    .contact-link:hover .cl-value { color: var(--accent); }
+    .contact-link:hover .cl-value { color: white; }
     .contact-ctas {
       display: flex;
+      gap: 0.85rem;
       justify-content: center;
-      gap: 1rem;
-      flex-wrap: wrap;
     }
+    .contact-ctas .btn-primary { background: white; color: var(--navy); }
+    .contact-ctas .btn-primary:hover { background: var(--cream); }
+    .contact-ctas .btn-secondary { border-color: rgba(255,255,255,0.4); color: white; }
+    .contact-ctas .btn-secondary:hover { background: white; color: var(--navy); }
 
     /* ── FOOTER ── */
     footer {
-      background: var(--bg);
-      border-top: 1px solid var(--border);
-      padding: 1.5rem 3.5rem;
+      background: #0a1020;
+      padding: 1.5rem 3rem;
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      font-size: 0.73rem;
-      color: var(--text-muted);
-      letter-spacing: 0.04em;
-    }
-
-    /* ── REVEAL ANIMATIONS ── */
-    .reveal {
-      opacity: 0;
-      transform: translateY(22px);
-      transition: opacity 0.65s ease, transform 0.65s ease;
-    }
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
+      align-items: center;
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.3);
+      letter-spacing: 0.08em;
     }
 
     /* ── RESPONSIVE ── */
-    @media (max-width: 960px) {
+    @media (max-width: 900px) {
       .hero { grid-template-columns: 1fr; }
-      .hero-left { min-height: 65vh; padding: 9rem 2rem 3.5rem; }
-      .hero-right { padding: 3.5rem 2rem 4rem; border-left: none; border-top: 1px solid var(--border); }
-      .timeline-item { grid-template-columns: 1fr; gap: 0.35rem; }
-      .timeline-meta { padding-top: 0; }
+      .hero-left {
+        position: relative;
+        height: 60vh;
+        min-height: 400px;
+      }
+      .hero-right { padding: 3.5rem 2rem; }
       .work-grid { grid-template-columns: 1fr; }
       .skills-grid { grid-template-columns: 1fr; gap: 2rem; }
-      nav { padding: 1rem 1.75rem; }
-      .nav-links { display: none; }
-      section { padding: 4.5rem 2rem; }
-      footer { padding: 1.25rem 2rem; flex-direction: column; gap: 0.4rem; text-align: center; }
+      .timeline-item { grid-template-columns: 1fr; gap: 0.75rem; }
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { gap: 1.5rem; }
+      .section-inner { padding: 4rem 2rem; }
+      .contact-inner { padding: 4rem 2rem; }
     }
   </style>
 </head>
 <body>
 
-  <!-- ── NAV ── -->
   <nav id="nav">
     <a href="#home" class="nav-logo">TT</a>
     <ul class="nav-links">
@@ -719,7 +633,7 @@
       </h1>
       <div class="hero-divider"></div>
       <p class="hero-tagline">CX operations leader who builds contact centers that scale, cultures that stick, and metrics that move the needle.</p>
-      <div class="hero-location">Charlotte, NC &nbsp;·&nbsp; Remote</div>
+      <div class="hero-location">Charlotte, NC · Remote</div>
     </div>
 
     <div class="hero-right">
@@ -735,9 +649,11 @@
         NPS turnarounds. Contact center scale.<br>VOC strategy at 150+ people.
       </h2>
 
-      <p class="hero-bio">
-        Director of Customer Operations with 20+ years of progressive leadership across renewable energy, technology, and logistics. Proven track record of scaling omnichannel contact centers, building high-performance cultures, and delivering measurable CX breakthroughs — including a 59-point NPS turnaround and the transformation of a 150+ person national operation.
-      </p>
+      <div class="hero-bio-block">
+        <p class="hero-bio">
+          Director of Customer Operations with 20+ years of progressive leadership across renewable energy, technology, and logistics. Proven track record of scaling omnichannel contact centers, building high-performance cultures, and delivering measurable CX breakthroughs — including a 59-point NPS turnaround and the transformation of a 150+ person national operation.
+        </p>
+      </div>
 
       <div class="hero-stats">
         <div>
@@ -763,6 +679,8 @@
         <a href="Ty_Trippany_Resume_v2.pdf" class="btn-secondary" download>↓ Resume</a>
         <a href="#contact" class="btn-secondary">✉ Get in Touch</a>
       </div>
+
+      <p class="hero-specialty">Strongest in contact center transformation, VOC strategy, workforce management, and scaling high-performance CX teams without unnecessary complexity.</p>
     </div>
 
   </section>
@@ -782,11 +700,10 @@
       <span class="marquee-item">Team Scaling</span>
       <span class="marquee-item">TCPA Compliance</span>
       <span class="marquee-item">Omnichannel CX</span>
-      <span class="marquee-item">CX Operations</span>
       <span class="marquee-item">Dialpad</span>
       <span class="marquee-item">Tableau</span>
       <span class="marquee-item">Smartsheet</span>
-      <!-- Duplicate for seamless loop -->
+      <!-- duplicate -->
       <span class="marquee-item">Contact Center Leadership</span>
       <span class="marquee-item">Voice of the Customer</span>
       <span class="marquee-item">Workforce Management</span>
@@ -799,7 +716,6 @@
       <span class="marquee-item">Team Scaling</span>
       <span class="marquee-item">TCPA Compliance</span>
       <span class="marquee-item">Omnichannel CX</span>
-      <span class="marquee-item">CX Operations</span>
       <span class="marquee-item">Dialpad</span>
       <span class="marquee-item">Tableau</span>
       <span class="marquee-item">Smartsheet</span>
@@ -808,261 +724,267 @@
 
   <!-- ── EXPERIENCE ── -->
   <section class="experience-section" id="experience">
-    <div class="section-counter reveal">01 / Career Experience</div>
-    <h2 class="section-title reveal">Built from the field up.</h2>
+    <div class="section-inner">
+      <div class="section-counter reveal">01 / Career Experience</div>
+      <h2 class="section-title reveal">Built from the field up.</h2>
 
-    <div class="timeline">
+      <div class="timeline">
 
-      <div class="timeline-item reveal">
-        <div class="timeline-meta">
-          <strong>Aug 2021 – Present</strong>
-          Freedom Forever<br>Charlotte, NC / Remote
-        </div>
-        <div class="timeline-content">
-          <h3>Director of Customer Operations</h3>
-          <div class="timeline-company">Freedom Forever</div>
-          <p>Led multi-department operations including Customer Support, Scheduling, Asset Control, and Business Resolutions for a national solar installation company serving customers in 30+ states.</p>
-          <ul class="bullets">
-            <li>Directed 150+ employees across remote and in-office environments; set KPI frameworks, OKRs, and performance management systems adopted company-wide.</li>
-            <li>Engineered a 59-point NPS turnaround (from −27 to +32) through structured VOC initiatives, root-cause elimination programs, and closed-loop feedback processes.</li>
-            <li>Increased Google customer review score from 3.3 to 4.3 and Glassdoor employee satisfaction from 3.2 to 4.1 through leadership transparency programs and culture development.</li>
-            <li>Modernized customer self-service systems, automating key touchpoints and measurably reducing inbound call volume while improving resolution speed.</li>
-            <li>Designed and deployed enterprise mentorship, performance evaluation, and feedback systems that created measurable supervisory pipeline growth.</li>
-          </ul>
-          <div class="tags">
-            <span class="tag">Contact Center</span>
-            <span class="tag">VOC</span>
-            <span class="tag">NPS</span>
-            <span class="tag">WFM</span>
-            <span class="tag">Process Automation</span>
-            <span class="tag">People Leadership</span>
-            <span class="tag">KPI Design</span>
+        <div class="timeline-item reveal">
+          <div class="timeline-meta">
+            <strong>Aug 2021 – Present</strong>
+            Freedom Forever<br>Charlotte, NC / Remote
+          </div>
+          <div class="timeline-content">
+            <h3>Director of Customer Operations</h3>
+            <div class="timeline-company">Freedom Forever</div>
+            <p>Led multi-department operations including Customer Support, Scheduling, Asset Control, and Business Resolutions for a national solar installation company serving customers in 30+ states.</p>
+            <ul class="bullets">
+              <li>Directed 150+ employees across remote and in-office environments; set KPI frameworks, OKRs, and performance management systems adopted company-wide.</li>
+              <li>Engineered a 59-point NPS turnaround (from −27 to +32) through structured VOC initiatives, root-cause elimination programs, and closed-loop feedback processes.</li>
+              <li>Increased Google customer review score from 3.3 to 4.3 and Glassdoor employee satisfaction from 3.2 to 4.1 through leadership transparency programs and culture development.</li>
+              <li>Modernized customer self-service systems, automating key touchpoints and measurably reducing inbound call volume while improving resolution speed.</li>
+              <li>Designed and deployed enterprise mentorship, performance evaluation, and feedback systems that created measurable supervisory pipeline growth.</li>
+            </ul>
+            <div class="tags">
+              <span class="tag">Contact Center</span>
+              <span class="tag">VOC</span>
+              <span class="tag">NPS</span>
+              <span class="tag">WFM</span>
+              <span class="tag">Process Automation</span>
+              <span class="tag">People Leadership</span>
+              <span class="tag">KPI Design</span>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="timeline-item reveal">
-        <div class="timeline-meta">
-          <strong>Apr 2021 – Aug 2021</strong>
-          Freedom Forever<br>Charlotte, NC / Remote
-        </div>
-        <div class="timeline-content">
-          <h3>Senior Manager, Scheduling</h3>
-          <div class="timeline-company">Freedom Forever</div>
-          <p>Directed national scheduling operations for solar installations; optimized technician utilization and appointment accuracy across high-volume workstreams.</p>
-          <ul class="bullets">
-            <li>Implemented data-driven capacity planning and resource forecasting, reducing backlogs and improving SLA compliance within the first 60 days.</li>
-          </ul>
-          <div class="tags">
-            <span class="tag">Scheduling Ops</span>
-            <span class="tag">Capacity Planning</span>
-            <span class="tag">SLA Management</span>
+        <div class="timeline-item reveal">
+          <div class="timeline-meta">
+            <strong>Apr 2021 – Aug 2021</strong>
+            Freedom Forever<br>Charlotte, NC / Remote
+          </div>
+          <div class="timeline-content">
+            <h3>Senior Manager, Scheduling</h3>
+            <div class="timeline-company">Freedom Forever</div>
+            <p>Directed national scheduling operations for solar installations; optimized technician utilization and appointment accuracy across high-volume workstreams.</p>
+            <ul class="bullets">
+              <li>Implemented data-driven capacity planning and resource forecasting, reducing backlogs and improving SLA compliance within the first 60 days.</li>
+            </ul>
+            <div class="tags">
+              <span class="tag">Scheduling Ops</span>
+              <span class="tag">Capacity Planning</span>
+              <span class="tag">SLA Management</span>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="timeline-item reveal">
-        <div class="timeline-meta">
-          <strong>Jul 2017 – Apr 2021</strong>
-          Tesla, Inc.<br>Las Vegas, Nevada
-        </div>
-        <div class="timeline-content">
-          <h3>Manager of Scheduling</h3>
-          <div class="timeline-company">Tesla, Inc.</div>
-          <p>Managed multi-state scheduling operations supporting residential solar installations; drove process standardization that reduced rework by 25%+ and raised on-time install rates by 18%.</p>
-          <ul class="bullets">
-            <li>Partnered cross-functionally with Engineering, Sales, and Service teams to synchronize installation timelines and customer communications at scale.</li>
-            <li>Mentored 4 supervisors and 40+ staff across multiple time zones to deliver a consistent, high-quality customer experience.</li>
-          </ul>
-          <div class="tags">
-            <span class="tag">WFM</span>
-            <span class="tag">Multi-State Ops</span>
-            <span class="tag">Team Development</span>
-            <span class="tag">Process Design</span>
+        <div class="timeline-item reveal">
+          <div class="timeline-meta">
+            <strong>Jul 2017 – Apr 2021</strong>
+            Tesla, Inc.<br>Las Vegas, Nevada
+          </div>
+          <div class="timeline-content">
+            <h3>Manager of Scheduling</h3>
+            <div class="timeline-company">Tesla, Inc.</div>
+            <p>Managed multi-state scheduling operations supporting residential solar installations; drove process standardization that reduced rework by 25%+ and raised on-time install rates by 18%.</p>
+            <ul class="bullets">
+              <li>Partnered cross-functionally with Engineering, Sales, and Service teams to synchronize installation timelines and customer communications at scale.</li>
+              <li>Mentored 4 supervisors and 40+ staff across multiple time zones to deliver a consistent, high-quality customer experience.</li>
+            </ul>
+            <div class="tags">
+              <span class="tag">WFM</span>
+              <span class="tag">Multi-State Ops</span>
+              <span class="tag">Team Development</span>
+              <span class="tag">Process Design</span>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="timeline-item reveal">
-        <div class="timeline-meta">
-          <strong>Feb 2016 – Jul 2017</strong>
-          Tesla, Inc.<br>Las Vegas, Nevada
-        </div>
-        <div class="timeline-content">
-          <h3>Associate Manager, Scheduling</h3>
-          <div class="timeline-company">Tesla, Inc.</div>
-          <p>Supervised daily scheduling operations with strict SLA adherence; developed internal dashboards tracking productivity, call adherence, and error trends.</p>
-          <div class="tags">
-            <span class="tag">SLA Adherence</span>
-            <span class="tag">Dashboards</span>
-            <span class="tag">Operations</span>
+        <div class="timeline-item reveal">
+          <div class="timeline-meta">
+            <strong>Feb 2016 – Jul 2017</strong>
+            Tesla, Inc.<br>Las Vegas, Nevada
+          </div>
+          <div class="timeline-content">
+            <h3>Associate Manager, Scheduling</h3>
+            <div class="timeline-company">Tesla, Inc.</div>
+            <p>Supervised daily scheduling operations with strict SLA adherence; developed internal dashboards tracking productivity, call adherence, and error trends.</p>
+            <div class="tags">
+              <span class="tag">SLA Adherence</span>
+              <span class="tag">Dashboards</span>
+              <span class="tag">Operations</span>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="timeline-item reveal">
-        <div class="timeline-meta">
-          <strong>Apr 2015 – Feb 2016</strong>
-          Tesla, Inc.<br>Las Vegas, Nevada
-        </div>
-        <div class="timeline-content">
-          <h3>Scheduling Supervisor</h3>
-          <div class="timeline-company">Tesla, Inc.</div>
-          <p>Promoted through successive leadership roles for exceptional team performance, data-driven improvements, and mentorship outcomes.</p>
-          <div class="tags">
-            <span class="tag">Team Leadership</span>
-            <span class="tag">Performance Management</span>
+        <div class="timeline-item reveal">
+          <div class="timeline-meta">
+            <strong>Apr 2015 – Feb 2016</strong>
+            Tesla, Inc.<br>Las Vegas, Nevada
+          </div>
+          <div class="timeline-content">
+            <h3>Scheduling Supervisor</h3>
+            <div class="timeline-company">Tesla, Inc.</div>
+            <p>Promoted through successive leadership roles for exceptional team performance, data-driven improvements, and mentorship outcomes.</p>
+            <div class="tags">
+              <span class="tag">Team Leadership</span>
+              <span class="tag">Performance Management</span>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="timeline-item reveal">
-        <div class="timeline-meta">
-          <strong>Oct 2008 – Sep 2014</strong>
-          Genesee &amp; Wyoming Inc.<br>St. Albans, Vermont
-        </div>
-        <div class="timeline-content">
-          <h3>Rail Traffic Controller (Dispatcher)</h3>
-          <div class="timeline-company">Genesee &amp; Wyoming Inc.</div>
-          <p>Coordinated national rail logistics in compliance with Federal Railroad Administration regulations; directed train movements and optimized resource allocation in high-stakes, time-sensitive environments.</p>
-          <div class="tags">
-            <span class="tag">FRA Compliance</span>
-            <span class="tag">Logistics</span>
-            <span class="tag">Crisis Management</span>
+        <div class="timeline-item reveal">
+          <div class="timeline-meta">
+            <strong>Oct 2008 – Sep 2014</strong>
+            Genesee &amp; Wyoming Inc.<br>St. Albans, Vermont
+          </div>
+          <div class="timeline-content">
+            <h3>Rail Traffic Controller (Dispatcher)</h3>
+            <div class="timeline-company">Genesee &amp; Wyoming Inc.</div>
+            <p>Coordinated national rail logistics in compliance with Federal Railroad Administration regulations; directed train movements and optimized resource allocation in high-stakes, time-sensitive environments.</p>
+            <div class="tags">
+              <span class="tag">FRA Compliance</span>
+              <span class="tag">Logistics</span>
+              <span class="tag">Crisis Management</span>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="timeline-item reveal">
-        <div class="timeline-meta">
-          <strong>Nov 2004 – Sep 2008</strong>
-          United States Marine Corps<br>Active Duty
-        </div>
-        <div class="timeline-content">
-          <h3>Diesel Mechanic / Platoon Sergeant</h3>
-          <div class="timeline-company">United States Marine Corps</div>
-          <p>Led maintenance operations and personnel management for vehicle readiness programs; earned multiple commendations for leadership and discipline under pressure.</p>
-          <div class="tags">
-            <span class="tag">Military Leadership</span>
-            <span class="tag">Operations</span>
-            <span class="tag">Personnel Management</span>
+        <div class="timeline-item reveal">
+          <div class="timeline-meta">
+            <strong>Nov 2004 – Sep 2008</strong>
+            United States Marine Corps<br>Active Duty
+          </div>
+          <div class="timeline-content">
+            <h3>Diesel Mechanic / Platoon Sergeant</h3>
+            <div class="timeline-company">United States Marine Corps</div>
+            <p>Led maintenance operations and personnel management for vehicle readiness programs; earned multiple commendations for leadership and discipline under pressure.</p>
+            <div class="tags">
+              <span class="tag">Military Leadership</span>
+              <span class="tag">Operations</span>
+              <span class="tag">Personnel Management</span>
+            </div>
           </div>
         </div>
-      </div>
 
+      </div>
     </div>
   </section>
 
   <!-- ── FEATURED IMPACT ── -->
   <section class="work-section" id="work">
-    <div class="section-counter reveal">02 / Featured Impact</div>
-    <h2 class="section-title reveal">Results that speak for themselves.</h2>
+    <div class="section-inner">
+      <div class="section-counter reveal">02 / Featured Impact</div>
+      <h2 class="section-title reveal">Results that speak for themselves.</h2>
 
-    <div class="work-grid">
+      <div class="work-grid">
 
-      <div class="work-card reveal">
-        <div class="work-num">Project 01</div>
-        <h3>NPS Turnaround Program</h3>
-        <div class="work-metric">59-Point Improvement &nbsp;·&nbsp; −27 → +32</div>
-        <p>Engineered a comprehensive VOC strategy and closed-loop feedback system that drove a dramatic NPS reversal — one of the most significant CX transformations in company history. Built the structural foundation that made improvements self-sustaining long after launch.</p>
-        <ul class="work-bullets">
-          <li>Structured VOC initiatives with root-cause elimination at every stage</li>
-          <li>Closed-loop feedback processes embedded across all customer touchpoints</li>
-          <li>Cross-functional culture transformation and leadership transparency programs</li>
-        </ul>
+        <div class="work-card reveal">
+          <div class="work-num">Project 01</div>
+          <h3>NPS Turnaround Program</h3>
+          <div class="work-metric">59-Point Improvement · −27 → +32</div>
+          <p>Engineered a comprehensive VOC strategy and closed-loop feedback system that drove a dramatic NPS reversal — one of the most significant CX transformations in company history.</p>
+          <ul class="work-bullets">
+            <li>Structured VOC initiatives with root-cause elimination at every stage</li>
+            <li>Closed-loop feedback processes embedded across all customer touchpoints</li>
+            <li>Cross-functional culture transformation and leadership transparency programs</li>
+          </ul>
+        </div>
+
+        <div class="work-card reveal">
+          <div class="work-num">Project 02</div>
+          <h3>Contact Center Transformation</h3>
+          <div class="work-metric">150+ Employees · 30+ States · National Scale</div>
+          <p>Rebuilt and scaled a multi-department national contact center operation — restructuring teams, implementing enterprise KPI frameworks, and modernizing every layer of the customer experience.</p>
+          <ul class="work-bullets">
+            <li>KPI frameworks and OKR systems adopted company-wide</li>
+            <li>Automated key self-service touchpoints, measurably reducing inbound volume</li>
+            <li>Google review 3.3 → 4.3 · Glassdoor 3.2 → 4.1</li>
+          </ul>
+        </div>
+
+        <div class="work-card reveal">
+          <div class="work-num">Project 03</div>
+          <h3>Workforce Management Overhaul</h3>
+          <div class="work-metric">25% Rework Reduction · 18% On-Time Improvement</div>
+          <p>Overhauled multi-state scheduling operations at Tesla — standardizing processes, reengineering staffing logic, and building the forecasting infrastructure that sustained quality at scale.</p>
+          <ul class="work-bullets">
+            <li>Reduced scheduling rework by 25%+ through process standardization</li>
+            <li>Raised on-time installation rates by 18% via improved capacity forecasting</li>
+            <li>Built cross-functional alignment across Engineering, Sales, and Service</li>
+          </ul>
+        </div>
+
+        <div class="work-card reveal">
+          <div class="work-num">Project 04</div>
+          <h3>Leadership Pipeline Development</h3>
+          <div class="work-metric">Supervisory Development · Culture Transformation</div>
+          <p>Designed and deployed enterprise mentorship, performance evaluation, and feedback systems that created a measurable supervisory pipeline and built leaders who could sustain results independently.</p>
+          <ul class="work-bullets">
+            <li>Enterprise mentorship program with measurable supervisory outcomes</li>
+            <li>Performance systems that drove consistent, durable behavioral change</li>
+            <li>Culture programs that lifted Glassdoor ratings by a full point company-wide</li>
+          </ul>
+        </div>
+
       </div>
-
-      <div class="work-card reveal">
-        <div class="work-num">Project 02</div>
-        <h3>Contact Center Transformation</h3>
-        <div class="work-metric">150+ Employees &nbsp;·&nbsp; 30+ States &nbsp;·&nbsp; National Scale</div>
-        <p>Rebuilt and scaled a multi-department national contact center operation — restructuring teams, implementing enterprise KPI frameworks, and modernizing every layer of the customer experience to support a high-growth solar company.</p>
-        <ul class="work-bullets">
-          <li>Designed KPI frameworks and OKR systems adopted company-wide</li>
-          <li>Automated key self-service touchpoints, measurably reducing inbound volume</li>
-          <li>Google review 3.3 → 4.3 &nbsp;·&nbsp; Glassdoor 3.2 → 4.1</li>
-        </ul>
-      </div>
-
-      <div class="work-card reveal">
-        <div class="work-num">Project 03</div>
-        <h3>Workforce Management Overhaul</h3>
-        <div class="work-metric">25% Rework Reduction &nbsp;·&nbsp; 18% On-Time Improvement</div>
-        <p>Overhauled multi-state scheduling operations at Tesla — standardizing processes, reengineering staffing logic, and building the forecasting infrastructure that sustained quality at scale across 40+ person teams spanning multiple time zones.</p>
-        <ul class="work-bullets">
-          <li>Reduced scheduling rework by 25%+ through process standardization</li>
-          <li>Raised on-time installation rates by 18% via improved capacity forecasting</li>
-          <li>Built cross-functional alignment across Engineering, Sales, and Service</li>
-        </ul>
-      </div>
-
-      <div class="work-card reveal">
-        <div class="work-num">Project 04</div>
-        <h3>Leadership Pipeline Development</h3>
-        <div class="work-metric">Supervisory Development &nbsp;·&nbsp; Culture Transformation</div>
-        <p>Designed and deployed enterprise mentorship, performance evaluation, and feedback systems that created a measurable supervisory pipeline — building leaders who could sustain results independently and scale the organization beyond its initial constraints.</p>
-        <ul class="work-bullets">
-          <li>Enterprise mentorship program with measurable supervisory development outcomes</li>
-          <li>Performance evaluation systems that drove consistent, durable behavioral change</li>
-          <li>Culture programs that lifted Glassdoor ratings by a full point company-wide</li>
-        </ul>
-      </div>
-
     </div>
   </section>
 
   <!-- ── SKILLS ── -->
   <section class="skills-section" id="skills">
-    <div class="section-counter reveal">03 / Skills &amp; Capabilities</div>
-    <h2 class="section-title reveal">Deep toolbox. Proven application.</h2>
+    <div class="section-inner">
+      <div class="section-counter reveal">03 / Skills &amp; Capabilities</div>
+      <h2 class="section-title reveal">Deep toolbox. Proven application.</h2>
 
-    <div class="skills-grid">
+      <div class="skills-grid">
 
-      <div class="skills-group reveal">
-        <h4>CX &amp; Operations Leadership</h4>
-        <ul class="skills-list">
-          <li>Contact Center Leadership</li>
-          <li>Voice of the Customer (VOC)</li>
-          <li>NPS Strategy &amp; Turnarounds</li>
-          <li>Omnichannel CX Management</li>
-          <li>Customer Experience Design</li>
-          <li>Reputation &amp; Review Management</li>
-          <li>Escalation &amp; Issue Resolution</li>
-          <li>SLA Design &amp; Enforcement</li>
-          <li>TCPA / FCC Compliance</li>
-        </ul>
+        <div class="skills-group reveal">
+          <h4>CX &amp; Operations Leadership</h4>
+          <ul class="skills-list">
+            <li>Contact Center Leadership</li>
+            <li>Voice of the Customer (VOC)</li>
+            <li>NPS Strategy &amp; Turnarounds</li>
+            <li>Omnichannel CX Management</li>
+            <li>Customer Experience Design</li>
+            <li>Reputation &amp; Review Management</li>
+            <li>Escalation &amp; Issue Resolution</li>
+            <li>SLA Design &amp; Enforcement</li>
+            <li>TCPA / FCC Compliance</li>
+          </ul>
+        </div>
+
+        <div class="skills-group reveal">
+          <h4>Workforce &amp; Process Management</h4>
+          <ul class="skills-list">
+            <li>Workforce Management (WFM)</li>
+            <li>Scheduling Operations</li>
+            <li>Capacity Planning &amp; Forecasting</li>
+            <li>KPI Framework Design</li>
+            <li>Process Engineering</li>
+            <li>Operating Model Design</li>
+            <li>Performance Management</li>
+            <li>OKR &amp; Goal Architecture</li>
+            <li>Leadership Development</li>
+          </ul>
+        </div>
+
+        <div class="skills-group reveal">
+          <h4>Technology &amp; Tools</h4>
+          <ul class="skills-list">
+            <li>Power BI &amp; Tableau</li>
+            <li>Zendesk</li>
+            <li>Salesforce</li>
+            <li>Dialpad</li>
+            <li>Smartsheet</li>
+            <li>SharePoint</li>
+            <li>ZoomInfo</li>
+            <li>Google Workspace</li>
+            <li>Microsoft 365</li>
+          </ul>
+        </div>
+
       </div>
-
-      <div class="skills-group reveal">
-        <h4>Workforce &amp; Process Management</h4>
-        <ul class="skills-list">
-          <li>Workforce Management (WFM)</li>
-          <li>Scheduling Operations</li>
-          <li>Capacity Planning &amp; Forecasting</li>
-          <li>KPI Framework Design</li>
-          <li>Process Engineering</li>
-          <li>Operating Model Design</li>
-          <li>Performance Management</li>
-          <li>OKR &amp; Goal Architecture</li>
-          <li>Leadership Development</li>
-        </ul>
-      </div>
-
-      <div class="skills-group reveal">
-        <h4>Technology &amp; Tools</h4>
-        <ul class="skills-list">
-          <li>Power BI &amp; Tableau</li>
-          <li>Zendesk</li>
-          <li>Salesforce</li>
-          <li>Dialpad</li>
-          <li>Smartsheet</li>
-          <li>SharePoint</li>
-          <li>ZoomInfo</li>
-          <li>Google Workspace</li>
-          <li>Microsoft 365</li>
-        </ul>
-      </div>
-
     </div>
   </section>
 
@@ -1071,11 +993,10 @@
     <div class="contact-inner">
       <div class="section-counter reveal">04 / Let's Connect</div>
       <h2 class="section-title reveal">
-        Open to the<br>
-        <span class="contact-title-grad">right role.</span>
+        Open to the right role.
       </h2>
       <p class="contact-desc reveal">
-        Targeting senior roles in contact center leadership, customer operations, workforce management, and voice of the customer strategy. Remote preferred &mdash; Charlotte, NC metro.
+        Targeting senior roles in contact center leadership, customer operations, workforce management, and voice of the customer strategy. Remote preferred — Charlotte, NC metro.
       </p>
 
       <div class="contact-links reveal">
@@ -1107,12 +1028,11 @@
   <!-- ── FOOTER ── -->
   <footer>
     <span>Ty Trippany &nbsp;/&nbsp; Director of Customer Operations</span>
-    <span>Charlotte, NC &nbsp;·&nbsp; Open to Remote</span>
+    <span>Charlotte, NC · Open to Remote</span>
   </footer>
 
   <script>
     (function () {
-      // Sticky nav
       const nav = document.getElementById('nav');
       function onScroll() {
         if (!nav) return;
@@ -1121,8 +1041,7 @@
       onScroll();
       window.addEventListener('scroll', onScroll, { passive: true });
 
-      // Scroll reveal
-      const reveals = document.querySelectorAll('.reveal');
+      const reveals = document.querySelectorAll('.reveal, .section-counter, .section-title');
       if ('IntersectionObserver' in window && reveals.length) {
         const obs = new IntersectionObserver(function (entries, observer) {
           entries.forEach(function (entry) {
@@ -1131,7 +1050,7 @@
               observer.unobserve(entry.target);
             }
           });
-        }, { threshold: 0.1, rootMargin: '0px 0px -6% 0px' });
+        }, { threshold: 0.1, rootMargin: '0px 0px -4% 0px' });
         reveals.forEach(function (el) { obs.observe(el); });
       } else {
         reveals.forEach(function (el) { el.classList.add('visible'); });
