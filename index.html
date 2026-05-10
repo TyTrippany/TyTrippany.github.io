@@ -30,7 +30,7 @@
       overflow-x: hidden;
     }
 
-    /* ── NAV ── */
+    /* NAV */
     nav {
       position: fixed;
       top: 0; left: 0; right: 0;
@@ -92,14 +92,12 @@
     nav.scrolled .nav-btn { border-color: var(--navy); color: var(--navy); }
     nav.scrolled .nav-btn:hover { background: var(--navy); color: white; }
 
-    /* ── HERO ── */
+    /* HERO */
     .hero {
       display: grid;
       grid-template-columns: 1fr 1fr;
       min-height: 100vh;
     }
-
-    /* LEFT: sticky photo panel */
     .hero-left {
       position: sticky;
       top: 0;
@@ -124,7 +122,6 @@
       );
     }
     .hero-left > * { position: relative; }
-
     .hero-status {
       display: inline-flex;
       align-items: center;
@@ -147,38 +144,13 @@
       line-height: 1.0;
       margin-bottom: 1.2rem;
     }
-    .hero-name .first {
-      display: block;
-      color: white;
-      font-weight: 700;
-    }
-    .hero-name .last {
-      display: block;
-      color: #7aadff;
-      font-style: italic;
-      font-weight: 700;
-    }
-    .hero-divider {
-      width: 2.5rem;
-      height: 2px;
-      background: var(--gold);
-      margin-bottom: 1.2rem;
-    }
-    .hero-tagline {
-      font-size: 0.9rem;
-      color: rgba(255,255,255,0.72);
-      max-width: 26rem;
-      line-height: 1.7;
-      margin-bottom: 1.2rem;
-    }
-    .hero-location {
-      font-size: 0.68rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.45);
-    }
+    .hero-name .first { display: block; color: white; font-weight: 700; }
+    .hero-name .last { display: block; color: #7aadff; font-style: italic; font-weight: 700; }
+    .hero-divider { width: 2.5rem; height: 2px; background: var(--gold); margin-bottom: 1.2rem; }
+    .hero-tagline { font-size: 0.9rem; color: rgba(255,255,255,0.72); max-width: 26rem; line-height: 1.7; margin-bottom: 1.2rem; }
+    .hero-location { font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.45); }
 
-    /* RIGHT: cream content panel */
+    /* HERO RIGHT */
     .hero-right {
       background: var(--cream);
       padding: 7rem 4rem 5rem 4.5rem;
@@ -186,418 +158,110 @@
       flex-direction: column;
       justify-content: center;
     }
-    .hero-profile {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      margin-bottom: 2rem;
-    }
-    .profile-avatar {
-      width: 56px; height: 56px;
-      border-radius: 50%;
-      overflow: hidden;
-      flex-shrink: 0;
-      border: 2px solid var(--border);
-    }
-    .profile-avatar img {
-      width: 100%; height: 100%;
-      object-fit: cover;
-      object-position: center top;
-    }
-    .profile-label {
-      font-size: 0.68rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-    }
-    .hero-headline {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(1.6rem, 2.4vw, 2.2rem);
-      line-height: 1.25;
-      color: var(--navy);
-      margin-bottom: 1.5rem;
-      font-weight: 600;
-    }
-    .hero-headline em {
-      color: var(--blue-accent);
-      font-style: italic;
-    }
-    .hero-bio-block {
-      border-left: 3px solid var(--blue-accent);
-      padding-left: 1.2rem;
-      margin-bottom: 2rem;
-    }
-    .hero-bio {
-      font-size: 0.9rem;
-      color: var(--text-muted);
-      line-height: 1.8;
-    }
-    .hero-stats {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.4rem 2.5rem;
-      margin-bottom: 2.2rem;
-    }
-    .stat-value {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.2rem;
-      font-weight: 700;
-      color: var(--navy);
-      line-height: 1;
-    }
-    .stat-label {
-      font-size: 0.65rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      margin-top: 0.25rem;
-    }
-    .hero-ctas {
-      display: flex;
-      gap: 0.85rem;
-      flex-wrap: wrap;
-      margin-bottom: 1.8rem;
-    }
-    .btn-primary {
-      background: var(--navy);
-      color: white;
-      padding: 0.75rem 1.6rem;
-      font-size: 0.72rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      text-decoration: none;
-      transition: background 0.2s;
-      font-family: 'Inter', sans-serif;
-      font-weight: 500;
-    }
+    .hero-profile { display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem; }
+    .profile-avatar { width: 56px; height: 56px; border-radius: 50%; overflow: hidden; flex-shrink: 0; border: 2px solid var(--border); }
+    .profile-avatar img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+    .profile-label { font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-muted); }
+    .hero-headline { font-family: 'Playfair Display', serif; font-size: clamp(1.6rem, 2.4vw, 2.2rem); line-height: 1.25; color: var(--navy); margin-bottom: 1.5rem; font-weight: 600; }
+    .hero-headline em { color: var(--blue-accent); font-style: italic; }
+    .hero-bio-block { border-left: 3px solid var(--blue-accent); padding-left: 1.2rem; margin-bottom: 2rem; }
+    .hero-bio { font-size: 0.9rem; color: var(--text-muted); line-height: 1.8; }
+    .hero-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1.4rem 2.5rem; margin-bottom: 2.2rem; }
+    .stat-value { font-family: 'Playfair Display', serif; font-size: 2.2rem; font-weight: 700; color: var(--navy); line-height: 1; }
+    .stat-label { font-size: 0.65rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-muted); margin-top: 0.25rem; }
+    .hero-ctas { display: flex; gap: 0.85rem; flex-wrap: wrap; margin-bottom: 1.8rem; }
+    .btn-primary { background: var(--navy); color: white; padding: 0.75rem 1.6rem; font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; transition: background 0.2s; font-family: 'Inter', sans-serif; font-weight: 500; }
     .btn-primary:hover { background: var(--navy-mid); }
-    .btn-secondary {
-      background: transparent;
-      border: 1px solid var(--navy);
-      color: var(--navy);
-      padding: 0.73rem 1.4rem;
-      font-size: 0.72rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      text-decoration: none;
-      transition: background 0.2s, color 0.2s;
-      font-family: 'Inter', sans-serif;
-      font-weight: 500;
-    }
+    .btn-secondary { background: transparent; border: 1px solid var(--navy); color: var(--navy); padding: 0.73rem 1.4rem; font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; transition: background 0.2s, color 0.2s; font-family: 'Inter', sans-serif; font-weight: 500; }
     .btn-secondary:hover { background: var(--navy); color: white; }
-    .hero-specialty {
-      font-size: 0.8rem;
-      color: var(--text-muted);
-      line-height: 1.7;
-    }
+    .hero-specialty { font-size: 0.8rem; color: var(--text-muted); line-height: 1.7; }
 
-    /* ── MARQUEE ── */
-    .marquee-wrap {
-      background: var(--navy);
-      padding: 1rem 0;
-      overflow: hidden;
-      white-space: nowrap;
-    }
-    .marquee-track {
-      display: inline-flex;
-      gap: 2.5rem;
-      animation: marquee 32s linear infinite;
-    }
-    .marquee-item {
-      font-size: 0.68rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.45);
-      flex-shrink: 0;
-    }
-    .marquee-item::after {
-      content: '—';
-      margin-left: 2.5rem;
-      color: var(--gold);
-    }
-    @keyframes marquee {
-      from { transform: translateX(0); }
-      to { transform: translateX(-50%); }
-    }
+    /* MARQUEE */
+    .marquee-wrap { background: var(--navy); padding: 1rem 0; overflow: hidden; white-space: nowrap; }
+    .marquee-track { display: inline-flex; gap: 2.5rem; animation: marquee 40s linear infinite; }
+    .marquee-item { font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255,255,255,0.45); flex-shrink: 0; }
+    .marquee-item::after { content: 'â'; margin-left: 2.5rem; color: var(--gold); }
+    @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
-    /* ── SECTIONS ── */
+    /* SECTIONS */
     section { scroll-margin-top: 0; }
-
-    .section-inner {
-      max-width: 880px;
-      margin: 0 auto;
-      padding: 6rem 4rem;
-    }
-    .section-counter {
-      font-size: 0.65rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--blue-accent);
-      margin-bottom: 0.75rem;
-      opacity: 0;
-      transform: translateY(16px);
-      transition: opacity 0.5s, transform 0.5s;
-    }
+    .section-inner { max-width: 880px; margin: 0 auto; padding: 6rem 4rem; }
+    .section-counter { font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--blue-accent); margin-bottom: 0.75rem; opacity: 0; transform: translateY(16px); transition: opacity 0.5s, transform 0.5s; }
     .section-counter.visible { opacity: 1; transform: none; }
-    .section-title {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(2rem, 3.5vw, 3rem);
-      font-weight: 700;
-      color: inherit;
-      margin-bottom: 3rem;
-      line-height: 1.15;
-      opacity: 0;
-      transform: translateY(16px);
-      transition: opacity 0.55s 0.07s, transform 0.55s 0.07s;
-    }
+    .section-title { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 700; color: inherit; margin-bottom: 3rem; line-height: 1.15; opacity: 0; transform: translateY(16px); transition: opacity 0.55s 0.07s, transform 0.55s 0.07s; }
     .section-title.visible { opacity: 1; transform: none; }
-
-    /* REVEAL */
-    .reveal {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.6s, transform 0.6s;
-    }
+    .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.6s, transform 0.6s; }
     .reveal.visible { opacity: 1; transform: none; }
 
-    /* ── EXPERIENCE ── */
+    /* EXPERIENCE */
     .experience-section { background: var(--cream); }
     .experience-section .section-inner { border-top: 1px solid var(--border); }
     .experience-section .section-title { color: var(--navy); }
-
     .timeline { display: flex; flex-direction: column; gap: 3.5rem; }
-    .timeline-item {
-      display: grid;
-      grid-template-columns: 11rem 1fr;
-      gap: 2.5rem;
-      padding-bottom: 3.5rem;
-      border-bottom: 1px solid var(--border);
-    }
+    .timeline-item { display: grid; grid-template-columns: 11rem 1fr; gap: 2.5rem; padding-bottom: 3.5rem; border-bottom: 1px solid var(--border); }
     .timeline-item:last-child { border-bottom: none; padding-bottom: 0; }
-    .timeline-meta {
-      font-size: 0.8rem;
-      color: var(--text-muted);
-      line-height: 1.6;
-      padding-top: 0.2rem;
-    }
-    .timeline-meta strong {
-      display: block;
-      color: var(--text);
-      font-weight: 600;
-      margin-bottom: 0.35rem;
-    }
-    .timeline-content h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.35rem;
-      font-weight: 600;
-      color: var(--navy);
-      margin-bottom: 0.2rem;
-    }
-    .timeline-company {
-      font-size: 0.78rem;
-      color: var(--blue-accent);
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      margin-bottom: 0.85rem;
-    }
-    .timeline-content p {
-      font-size: 0.88rem;
-      color: var(--text-muted);
-      line-height: 1.8;
-      margin-bottom: 0.9rem;
-    }
+    .timeline-meta { font-size: 0.8rem; color: var(--text-muted); line-height: 1.6; padding-top: 0.2rem; }
+    .timeline-meta strong { display: block; color: var(--text); font-weight: 600; margin-bottom: 0.35rem; }
+    .timeline-content h3 { font-family: 'Playfair Display', serif; font-size: 1.35rem; font-weight: 600; color: var(--navy); margin-bottom: 0.2rem; }
+    .timeline-company { font-size: 0.78rem; color: var(--blue-accent); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 0.85rem; }
+    .timeline-content p { font-size: 0.88rem; color: var(--text-muted); line-height: 1.8; margin-bottom: 0.9rem; }
     .bullets { list-style: none; margin-bottom: 1rem; }
-    .bullets li {
-      font-size: 0.86rem;
-      color: var(--text-muted);
-      line-height: 1.7;
-      padding-left: 1.4rem;
-      margin-bottom: 0.4rem;
-      position: relative;
-    }
-    .bullets li::before {
-      content: '—';
-      position: absolute;
-      left: 0;
-      color: var(--gold);
-    }
+    .bullets li { font-size: 0.86rem; color: var(--text-muted); line-height: 1.7; padding-left: 1.4rem; margin-bottom: 0.4rem; position: relative; }
+    .bullets li::before { content: 'â'; position: absolute; left: 0; color: var(--gold); }
     .tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
-    .tag {
-      font-size: 0.65rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      border: 1px solid var(--border);
-      padding: 0.28rem 0.65rem;
-    }
+    .tag { font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); border: 1px solid var(--border); padding: 0.28rem 0.65rem; }
 
-    /* ── IMPACT ── */
+    /* IMPACT */
     .work-section { background: var(--navy); }
     .work-section .section-counter { color: var(--gold); }
     .work-section .section-title { color: white; }
-    .work-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2px;
-      margin-top: -1rem;
-    }
-    .work-card {
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.07);
-      padding: 2.2rem 2.2rem;
-      transition: background 0.2s;
-    }
+    .work-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; margin-top: -1rem; }
+    .work-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07); padding: 2.2rem 2.2rem; transition: background 0.2s; }
     .work-card:hover { background: rgba(255,255,255,0.08); }
-    .work-num {
-      font-size: 0.62rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 0.85rem;
-    }
-    .work-card h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.25rem;
-      font-weight: 600;
-      color: white;
-      margin-bottom: 0.5rem;
-      line-height: 1.3;
-    }
-    .work-metric {
-      font-size: 0.72rem;
-      letter-spacing: 0.08em;
-      color: rgba(255,255,255,0.45);
-      margin-bottom: 1rem;
-    }
-    .work-card p {
-      font-size: 0.86rem;
-      color: rgba(255,255,255,0.6);
-      line-height: 1.8;
-      margin-bottom: 1.1rem;
-    }
+    .work-num { font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.85rem; }
+    .work-card h3 { font-family: 'Playfair Display', serif; font-size: 1.25rem; font-weight: 600; color: white; margin-bottom: 0.5rem; line-height: 1.3; }
+    .work-metric { font-size: 0.72rem; letter-spacing: 0.08em; color: rgba(255,255,255,0.45); margin-bottom: 1rem; }
+    .work-card p { font-size: 0.86rem; color: rgba(255,255,255,0.6); line-height: 1.8; margin-bottom: 1.1rem; }
     .work-bullets { list-style: none; }
-    .work-bullets li {
-      font-size: 0.82rem;
-      color: rgba(255,255,255,0.5);
-      line-height: 1.6;
-      padding-left: 1.2rem;
-      position: relative;
-      margin-bottom: 0.35rem;
-    }
-    .work-bullets li::before {
-      content: '—';
-      position: absolute;
-      left: 0;
-      color: var(--gold);
-    }
+    .work-bullets li { font-size: 0.82rem; color: rgba(255,255,255,0.5); line-height: 1.6; padding-left: 1.2rem; position: relative; margin-bottom: 0.35rem; }
+    .work-bullets li::before { content: 'â'; position: absolute; left: 0; color: var(--gold); }
 
-    /* ── SKILLS ── */
+    /* SKILLS */
     .skills-section { background: var(--cream2); }
     .skills-section .section-title { color: var(--navy); }
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 3rem;
-    }
-    .skills-group h4 {
-      font-size: 0.65rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      margin-bottom: 1.4rem;
-      padding-bottom: 0.75rem;
-      border-bottom: 1px solid var(--border);
-    }
+    .skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem; }
+    .skills-group h4 { font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 1.4rem; padding-bottom: 0.75rem; border-bottom: 1px solid var(--border); }
     .skills-list { list-style: none; }
-    .skills-list li {
-      font-size: 0.86rem;
-      color: var(--text-muted);
-      line-height: 1.6;
-      padding: 0.4rem 0 0.4rem 1.2rem;
-      position: relative;
-      border-bottom: 1px solid rgba(26,39,68,0.06);
-      transition: color 0.2s;
-    }
+    .skills-list li { font-size: 0.86rem; color: var(--text-muted); line-height: 1.6; padding: 0.4rem 0 0.4rem 1.2rem; position: relative; border-bottom: 1px solid rgba(26,39,68,0.06); transition: color 0.2s; }
     .skills-list li:last-child { border-bottom: none; }
-    .skills-list li::before {
-      content: '—';
-      position: absolute;
-      left: 0;
-      color: var(--gold);
-    }
+    .skills-list li::before { content: 'â'; position: absolute; left: 0; color: var(--gold); }
     .skills-list li:hover { color: var(--text); }
 
-    /* ── CONTACT ── */
+    /* CONTACT */
     .contact-section { background: var(--navy); }
     .contact-section .section-counter { color: var(--gold); }
     .contact-section .section-title { color: white; }
     .contact-inner { max-width: 600px; margin: 0 auto; padding: 6rem 4rem; text-align: center; }
-    .contact-desc {
-      font-size: 0.9rem;
-      color: rgba(255,255,255,0.55);
-      line-height: 1.8;
-      margin-bottom: 2.5rem;
-    }
-    .contact-links {
-      display: flex;
-      flex-direction: column;
-      gap: 0;
-      margin-bottom: 2.5rem;
-      text-align: left;
-      border-top: 1px solid rgba(255,255,255,0.08);
-    }
-    .contact-link {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 0;
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-      text-decoration: none;
-      transition: padding-left 0.2s;
-    }
+    .contact-desc { font-size: 0.9rem; color: rgba(255,255,255,0.55); line-height: 1.8; margin-bottom: 2.5rem; }
+    .contact-links { display: flex; flex-direction: column; gap: 0; margin-bottom: 2.5rem; text-align: left; border-top: 1px solid rgba(255,255,255,0.08); }
+    .contact-link { display: flex; justify-content: space-between; align-items: center; padding: 1rem 0; border-bottom: 1px solid rgba(255,255,255,0.08); text-decoration: none; transition: padding-left 0.2s; }
     .contact-link:hover { padding-left: 0.5rem; }
-    .cl-label {
-      font-size: 0.65rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--gold);
-    }
-    .cl-value {
-      font-size: 0.88rem;
-      color: rgba(255,255,255,0.7);
-      transition: color 0.2s;
-    }
+    .cl-label { font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); }
+    .cl-value { font-size: 0.88rem; color: rgba(255,255,255,0.7); transition: color 0.2s; }
     .contact-link:hover .cl-value { color: white; }
-    .contact-ctas {
-      display: flex;
-      gap: 0.85rem;
-      justify-content: center;
-    }
+    .contact-ctas { display: flex; gap: 0.85rem; justify-content: center; }
     .contact-ctas .btn-primary { background: white; color: var(--navy); }
     .contact-ctas .btn-primary:hover { background: var(--cream); }
     .contact-ctas .btn-secondary { border-color: rgba(255,255,255,0.4); color: white; }
     .contact-ctas .btn-secondary:hover { background: white; color: var(--navy); }
 
-    /* ── FOOTER ── */
-    footer {
-      background: #0a1020;
-      padding: 1.5rem 3rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 0.72rem;
-      color: rgba(255,255,255,0.3);
-      letter-spacing: 0.08em;
-    }
+    /* FOOTER */
+    footer { background: #0a1020; padding: 1.5rem 3rem; display: flex; justify-content: space-between; align-items: center; font-size: 0.72rem; color: rgba(255,255,255,0.3); letter-spacing: 0.08em; }
 
-    /* ── RESPONSIVE ── */
+    /* RESPONSIVE */
     @media (max-width: 900px) {
       .hero { grid-template-columns: 1fr; }
-      .hero-left {
-        position: relative;
-        height: 60vh;
-        min-height: 400px;
-      }
+      .hero-left { position: relative; height: 60vh; min-height: 400px; }
       .hero-right { padding: 3.5rem 2rem; }
       .work-grid { grid-template-columns: 1fr; }
       .skills-grid { grid-template-columns: 1fr; gap: 2rem; }
@@ -619,12 +283,11 @@
       <li><a href="#skills">Skills</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
-    <a href="Ty_Trippany_Resume_v2.pdf" class="nav-btn" download>↓ Resume</a>
+    <a href="Ty_Trippany_Master_Resume.pdf" class="nav-btn" download>&#8595; Resume</a>
   </nav>
 
-  <!-- ── HERO ── -->
+  <!-- HERO -->
   <section class="hero" id="home">
-
     <div class="hero-left">
       <div class="hero-status">Open to senior remote roles</div>
       <h1 class="hero-name">
@@ -633,7 +296,7 @@
       </h1>
       <div class="hero-divider"></div>
       <p class="hero-tagline">CX operations leader who builds contact centers that scale, cultures that stick, and metrics that move the needle.</p>
-      <div class="hero-location">Charlotte, NC · Remote</div>
+      <div class="hero-location">Charlotte, NC &nbsp;&middot;&nbsp; Remote</div>
     </div>
 
     <div class="hero-right">
@@ -645,13 +308,13 @@
       </div>
 
       <h2 class="hero-headline">
-        <em>CX leader who builds systems.</em><br>
-        NPS turnarounds. Contact center scale.<br>VOC strategy at 150+ people.
+        <em>CX leader who delivers results.</em><br>
+        NPS turnarounds. $10M operations.<br>AI-powered contact center scale.
       </h2>
 
       <div class="hero-bio-block">
         <p class="hero-bio">
-          Director of Customer Operations with 20+ years of progressive leadership across renewable energy, technology, and logistics. Proven track record of scaling omnichannel contact centers, building high-performance cultures, and delivering measurable CX breakthroughs — including a 59-point NPS turnaround and the transformation of a 150+ person national operation.
+          Director of Customer Operations with 20+ years of progressive leadership across renewable energy, technology, and logistics. Proven track record of scaling omnichannel contact centers, building high-performance cultures, and delivering measurable CX breakthroughs &mdash; including a 59-point NPS turnaround, $1.4M in automation savings, 68% headcount optimization, and a featured Anthropic AI case study across a 150-person, $10M operation.
         </p>
       </div>
 
@@ -661,31 +324,30 @@
           <div class="stat-label">NPS Turnaround</div>
         </div>
         <div>
-          <div class="stat-value">20+</div>
-          <div class="stat-label">Years Experience</div>
+          <div class="stat-value">$1.4M</div>
+          <div class="stat-label">Automation Savings</div>
         </div>
         <div>
-          <div class="stat-value">150+</div>
-          <div class="stat-label">People Led</div>
+          <div class="stat-value">$10M</div>
+          <div class="stat-label">Budget Managed</div>
         </div>
         <div>
-          <div class="stat-value">30+</div>
-          <div class="stat-label">States Served</div>
+          <div class="stat-value">70k</div>
+          <div class="stat-label">Monthly Contacts</div>
         </div>
       </div>
 
       <div class="hero-ctas">
-        <a href="#work" class="btn-primary">↑ View Impact</a>
-        <a href="Ty_Trippany_Resume_v2.pdf" class="btn-secondary" download>↓ Resume</a>
-        <a href="#contact" class="btn-secondary">✉ Get in Touch</a>
+        <a href="#work" class="btn-primary">&#8593; View Impact</a>
+        <a href="Ty_Trippany_Master_Resume.pdf" class="btn-secondary" download>&#8595; Resume</a>
+        <a href="#contact" class="btn-secondary">&#9993; Get in Touch</a>
       </div>
 
-      <p class="hero-specialty">Strongest in contact center transformation, VOC strategy, workforce management, and scaling high-performance CX teams without unnecessary complexity.</p>
+      <p class="hero-specialty">Strongest in contact center transformation, VOC strategy, workforce management, AI-enabled automation, and scaling high-performance CX teams without unnecessary complexity.</p>
     </div>
-
   </section>
 
-  <!-- ── MARQUEE ── -->
+  <!-- MARQUEE -->
   <div class="marquee-wrap" aria-hidden="true">
     <div class="marquee-track">
       <span class="marquee-item">Contact Center Leadership</span>
@@ -693,36 +355,42 @@
       <span class="marquee-item">Workforce Management</span>
       <span class="marquee-item">NPS Strategy</span>
       <span class="marquee-item">Process Automation</span>
+      <span class="marquee-item">AI Workflow Design</span>
       <span class="marquee-item">Power BI</span>
       <span class="marquee-item">Zendesk</span>
       <span class="marquee-item">Salesforce</span>
+      <span class="marquee-item">Offshore BPO Management</span>
+      <span class="marquee-item">Vendor Negotiations</span>
       <span class="marquee-item">KPI Architecture</span>
-      <span class="marquee-item">Team Scaling</span>
       <span class="marquee-item">TCPA Compliance</span>
       <span class="marquee-item">Omnichannel CX</span>
       <span class="marquee-item">Dialpad</span>
-      <span class="marquee-item">Tableau</span>
-      <span class="marquee-item">Smartsheet</span>
-      <!-- duplicate -->
+      <span class="marquee-item">Anthropic Claude SDK</span>
+      <span class="marquee-item">Online Reputation Mgmt</span>
+      <span class="marquee-item">Crisis Communications</span>
+      <!-- duplicate for seamless loop -->
       <span class="marquee-item">Contact Center Leadership</span>
       <span class="marquee-item">Voice of the Customer</span>
       <span class="marquee-item">Workforce Management</span>
       <span class="marquee-item">NPS Strategy</span>
       <span class="marquee-item">Process Automation</span>
+      <span class="marquee-item">AI Workflow Design</span>
       <span class="marquee-item">Power BI</span>
       <span class="marquee-item">Zendesk</span>
       <span class="marquee-item">Salesforce</span>
+      <span class="marquee-item">Offshore BPO Management</span>
+      <span class="marquee-item">Vendor Negotiations</span>
       <span class="marquee-item">KPI Architecture</span>
-      <span class="marquee-item">Team Scaling</span>
       <span class="marquee-item">TCPA Compliance</span>
       <span class="marquee-item">Omnichannel CX</span>
       <span class="marquee-item">Dialpad</span>
-      <span class="marquee-item">Tableau</span>
-      <span class="marquee-item">Smartsheet</span>
+      <span class="marquee-item">Anthropic Claude SDK</span>
+      <span class="marquee-item">Online Reputation Mgmt</span>
+      <span class="marquee-item">Crisis Communications</span>
     </div>
   </div>
 
-  <!-- ── EXPERIENCE ── -->
+  <!-- EXPERIENCE -->
   <section class="experience-section" id="experience">
     <div class="section-inner">
       <div class="section-counter reveal">01 / Career Experience</div>
@@ -732,35 +400,39 @@
 
         <div class="timeline-item reveal">
           <div class="timeline-meta">
-            <strong>Aug 2021 – Present</strong>
+            <strong>Aug 2021 &ndash; Present</strong>
             Freedom Forever<br>Charlotte, NC / Remote
           </div>
           <div class="timeline-content">
             <h3>Director of Customer Operations</h3>
             <div class="timeline-company">Freedom Forever</div>
-            <p>Led multi-department operations including Customer Support, Scheduling, Asset Control, and Business Resolutions for a national solar installation company serving customers in 30+ states.</p>
+            <p>Led a 150-person, $10M Customer Operations organization across 5 teams &mdash; Scheduling, Customer Support, Business Resolutions, HOA, and Voice of the Customer &mdash; managing 70,000+ monthly omni-channel contacts across 30+ states as a leader of leaders.</p>
             <ul class="bullets">
-              <li>Directed 150+ employees across remote and in-office environments; set KPI frameworks, OKRs, and performance management systems adopted company-wide.</li>
-              <li>Engineered a 59-point NPS turnaround (from −27 to +32) through structured VOC initiatives, root-cause elimination programs, and closed-loop feedback processes.</li>
-              <li>Increased Google customer review score from 3.3 to 4.3 and Glassdoor employee satisfaction from 3.2 to 4.1 through leadership transparency programs and culture development.</li>
-              <li>Modernized customer self-service systems, automating key touchpoints and measurably reducing inbound call volume while improving resolution speed.</li>
-              <li>Designed and deployed enterprise mentorship, performance evaluation, and feedback systems that created measurable supervisory pipeline growth.</li>
+              <li>Engineered a 59-point NPS turnaround (&#8722;27 to +32) through structured VOC initiatives, NPS surveys in partnership with finance companies, and closed-loop feedback processes.</li>
+              <li>Drove online reputation management across Google, Glassdoor, BBB, SolarReviews, TrustPilot, and EnergySage &mdash; raising Google score 3.3&#8594;4.3; accumulated more BBB reviews than all major solar competitors combined.</li>
+              <li>Built centralized reporting structure that reduced branch support headcount by 68% (2.2&#8594;0.7 heads/branch) while expanding coverage and improving quality.</li>
+              <li>Automated scheduling workflows and launched customer self-scheduling, driving 77% labor reduction and $1.4M in net annual savings.</li>
+              <li>Co-led AI strategy using Anthropic Claude Agent SDK &mdash; featured in an Anthropic customer case study &mdash; achieving 97.5% automation success on permit workflows (~19,000 emails/month, 71% fully automated) and 25% initial deflection rate in Customer Support.</li>
+              <li>Negotiated vendor contracts for omni-channel platforms and two offshore BPO centers (Philippines &amp; Mexico); led QBRs to enforce SLA accountability.</li>
+              <li>Co-led multiple telephony and omni-channel (email &amp; live chat) platform rollouts with a direct-report Program Manager, from vendor selection through go-live.</li>
+              <li>Served as company point person for media relations and crisis communications; personally managed 40+ media requests from local and regional news outlets.</li>
             </ul>
             <div class="tags">
               <span class="tag">Contact Center</span>
               <span class="tag">VOC</span>
               <span class="tag">NPS</span>
               <span class="tag">WFM</span>
-              <span class="tag">Process Automation</span>
-              <span class="tag">People Leadership</span>
-              <span class="tag">KPI Design</span>
+              <span class="tag">AI Automation</span>
+              <span class="tag">BPO Management</span>
+              <span class="tag">Vendor Negotiation</span>
+              <span class="tag">Crisis Comms</span>
             </div>
           </div>
         </div>
 
         <div class="timeline-item reveal">
           <div class="timeline-meta">
-            <strong>Apr 2021 – Aug 2021</strong>
+            <strong>Apr 2021 &ndash; Aug 2021</strong>
             Freedom Forever<br>Charlotte, NC / Remote
           </div>
           <div class="timeline-content">
@@ -780,35 +452,39 @@
 
         <div class="timeline-item reveal">
           <div class="timeline-meta">
-            <strong>Jul 2017 – Apr 2021</strong>
+            <strong>Jul 2017 &ndash; Apr 2021</strong>
             Tesla, Inc.<br>Las Vegas, Nevada
           </div>
           <div class="timeline-content">
             <h3>Manager of Scheduling</h3>
             <div class="timeline-company">Tesla, Inc.</div>
-            <p>Managed multi-state scheduling operations supporting residential solar installations; drove process standardization that reduced rework by 25%+ and raised on-time install rates by 18%.</p>
+            <p>Owned $6M annual budget managing multi-state scheduling operations supporting residential solar installations as a leader of leaders &mdash; directly managing 4 supervisors and 40+ staff across multiple time zones.</p>
             <ul class="bullets">
+              <li>Drove process standardization that reduced scheduling rework by 25%+ and raised on-time install rates by 18%.</li>
               <li>Partnered cross-functionally with Engineering, Sales, and Service teams to synchronize installation timelines and customer communications at scale.</li>
-              <li>Mentored 4 supervisors and 40+ staff across multiple time zones to deliver a consistent, high-quality customer experience.</li>
             </ul>
             <div class="tags">
               <span class="tag">WFM</span>
+              <span class="tag">$6M Budget</span>
               <span class="tag">Multi-State Ops</span>
-              <span class="tag">Team Development</span>
               <span class="tag">Process Design</span>
+              <span class="tag">Team Development</span>
             </div>
           </div>
         </div>
 
         <div class="timeline-item reveal">
           <div class="timeline-meta">
-            <strong>Feb 2016 – Jul 2017</strong>
+            <strong>Apr 2015 &ndash; Jul 2017</strong>
             Tesla, Inc.<br>Las Vegas, Nevada
           </div>
           <div class="timeline-content">
-            <h3>Associate Manager, Scheduling</h3>
+            <h3>Scheduling Supervisor &#8594; Associate Manager</h3>
             <div class="timeline-company">Tesla, Inc.</div>
-            <p>Supervised daily scheduling operations with strict SLA adherence; developed internal dashboards tracking productivity, call adherence, and error trends.</p>
+            <p>Earned two promotions within the same scheduling team in under three years, advancing from Supervisor to Associate Manager based on team performance and operational results.</p>
+            <ul class="bullets">
+              <li>Developed dashboards tracking productivity, SLA adherence, and scheduling error trends that became standard reporting across the team.</li>
+            </ul>
             <div class="tags">
               <span class="tag">SLA Adherence</span>
               <span class="tag">Dashboards</span>
@@ -819,29 +495,16 @@
 
         <div class="timeline-item reveal">
           <div class="timeline-meta">
-            <strong>Apr 2015 – Feb 2016</strong>
-            Tesla, Inc.<br>Las Vegas, Nevada
-          </div>
-          <div class="timeline-content">
-            <h3>Scheduling Supervisor</h3>
-            <div class="timeline-company">Tesla, Inc.</div>
-            <p>Promoted through successive leadership roles for exceptional team performance, data-driven improvements, and mentorship outcomes.</p>
-            <div class="tags">
-              <span class="tag">Team Leadership</span>
-              <span class="tag">Performance Management</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="timeline-item reveal">
-          <div class="timeline-meta">
-            <strong>Oct 2008 – Sep 2014</strong>
+            <strong>Oct 2008 &ndash; Sep 2014</strong>
             Genesee &amp; Wyoming Inc.<br>St. Albans, Vermont
           </div>
           <div class="timeline-content">
             <h3>Rail Traffic Controller (Dispatcher)</h3>
             <div class="timeline-company">Genesee &amp; Wyoming Inc.</div>
             <p>Coordinated national rail logistics in compliance with Federal Railroad Administration regulations; directed train movements and optimized resource allocation in high-stakes, time-sensitive environments.</p>
+            <ul class="bullets">
+              <li>Developed crisis-management and communication protocols for time-sensitive, high-stakes operational environments.</li>
+            </ul>
             <div class="tags">
               <span class="tag">FRA Compliance</span>
               <span class="tag">Logistics</span>
@@ -852,17 +515,18 @@
 
         <div class="timeline-item reveal">
           <div class="timeline-meta">
-            <strong>Nov 2004 – Sep 2008</strong>
+            <strong>Nov 2004 &ndash; Sep 2008</strong>
             United States Marine Corps<br>Active Duty
           </div>
           <div class="timeline-content">
-            <h3>Diesel Mechanic / Platoon Sergeant</h3>
-            <div class="timeline-company">United States Marine Corps</div>
-            <p>Led maintenance operations and personnel management for vehicle readiness programs; earned multiple commendations for leadership and discipline under pressure.</p>
+            <h3>Diesel Mechanic / Platoon Sergeant &mdash; Sergeant (E-5)</h3>
+            <div class="timeline-company">United States Marine Corps &nbsp;&middot;&nbsp; Honorable Discharge</div>
+            <p>Achieved the rank of Sergeant (E-5); led maintenance operations as a leader of leaders, managing junior NCOs and their teams across vehicle readiness programs. Earned multiple commendations for leadership and performance under pressure.</p>
             <div class="tags">
               <span class="tag">Military Leadership</span>
-              <span class="tag">Operations</span>
+              <span class="tag">Sergeant E-5</span>
               <span class="tag">Personnel Management</span>
+              <span class="tag">Operations</span>
             </div>
           </div>
         </div>
@@ -871,7 +535,7 @@
     </div>
   </section>
 
-  <!-- ── FEATURED IMPACT ── -->
+  <!-- FEATURED IMPACT -->
   <section class="work-section" id="work">
     <div class="section-inner">
       <div class="section-counter reveal">02 / Featured Impact</div>
@@ -880,50 +544,76 @@
       <div class="work-grid">
 
         <div class="work-card reveal">
-          <div class="work-num">Project 01</div>
-          <h3>NPS Turnaround Program</h3>
-          <div class="work-metric">59-Point Improvement · −27 → +32</div>
-          <p>Engineered a comprehensive VOC strategy and closed-loop feedback system that drove a dramatic NPS reversal — one of the most significant CX transformations in company history.</p>
+          <div class="work-num">01</div>
+          <h3>NPS &amp; VOC Transformation</h3>
+          <div class="work-metric">59-Point Improvement &nbsp;&middot;&nbsp; &#8722;27 &#8594; +32</div>
+          <p>Engineered a comprehensive VOC strategy and closed-loop feedback system that drove one of the most significant NPS reversals in company history, with concurrent reputation gains across six platforms.</p>
           <ul class="work-bullets">
-            <li>Structured VOC initiatives with root-cause elimination at every stage</li>
-            <li>Closed-loop feedback processes embedded across all customer touchpoints</li>
-            <li>Cross-functional culture transformation and leadership transparency programs</li>
+            <li>NPS surveys administered in partnership with finance company partners</li>
+            <li>Google review score: 3.3 &#8594; 4.3 &nbsp;&middot;&nbsp; Glassdoor: 3.2 &#8594; 4.1</li>
+            <li>More BBB reviews than all major solar competitors combined</li>
+            <li>Monitored &amp; managed: Google, Glassdoor, BBB, SolarReviews, TrustPilot, EnergySage</li>
           </ul>
         </div>
 
         <div class="work-card reveal">
-          <div class="work-num">Project 02</div>
+          <div class="work-num">02</div>
+          <h3>Operational Scale &amp; Cost Reduction</h3>
+          <div class="work-metric">68% Headcount Reduction &nbsp;&middot;&nbsp; $1.4M Saved</div>
+          <p>Built a centralized reporting structure that dramatically reduced branch support overhead while improving coverage, and automated scheduling workflows that delivered over a million dollars in annual savings.</p>
+          <ul class="work-bullets">
+            <li>Branch support headcount: 2.2 &#8594; 0.7 heads/branch (68% reduction)</li>
+            <li>77% labor reduction via scheduling automation &amp; self-service launch</li>
+            <li>$1.4M in net annual savings from automation initiatives</li>
+          </ul>
+        </div>
+
+        <div class="work-card reveal">
+          <div class="work-num">03</div>
+          <h3>Enterprise AI Implementation</h3>
+          <div class="work-metric">97.5% Automation Success &nbsp;&middot;&nbsp; Anthropic Case Study</div>
+          <p>Co-led the business strategy and process design for an enterprise AI deployment using Anthropic Claude Agent SDK &mdash; recognized in an Anthropic customer case study as a model for agentic automation at scale.</p>
+          <ul class="work-bullets">
+            <li>~19,000 permit emails processed monthly; 71% fully automated end-to-end</li>
+            <li>97.5% benchmark success vs. 20&ndash;60% for alternative frameworks</li>
+            <li>25% initial AI deflection rate deployed in Customer Support</li>
+            <li>$0.20&ndash;$0.35 per execution vs. human equivalent cost</li>
+          </ul>
+        </div>
+
+        <div class="work-card reveal">
+          <div class="work-num">04</div>
           <h3>Contact Center Transformation</h3>
-          <div class="work-metric">150+ Employees · 30+ States · National Scale</div>
-          <p>Rebuilt and scaled a multi-department national contact center operation — restructuring teams, implementing enterprise KPI frameworks, and modernizing every layer of the customer experience.</p>
+          <div class="work-metric">150 Employees &nbsp;&middot;&nbsp; $10M Budget &nbsp;&middot;&nbsp; 70k Monthly Contacts</div>
+          <p>Rebuilt and scaled a multi-department national contact center operation &mdash; restructuring five teams, implementing enterprise KPI frameworks, and modernizing every layer of the customer and employee experience.</p>
           <ul class="work-bullets">
-            <li>KPI frameworks and OKR systems adopted company-wide</li>
-            <li>Automated key self-service touchpoints, measurably reducing inbound volume</li>
-            <li>Google review 3.3 → 4.3 · Glassdoor 3.2 → 4.1</li>
+            <li>5 teams: Scheduling, Customer Support, Business Resolutions, HOA, VOC</li>
+            <li>Negotiated omni-channel vendor contracts &amp; 2 offshore BPO centers (Philippines &amp; Mexico)</li>
+            <li>Led telephony &amp; omni-channel platform rollouts from vendor selection through go-live</li>
           </ul>
         </div>
 
         <div class="work-card reveal">
-          <div class="work-num">Project 03</div>
+          <div class="work-num">05</div>
           <h3>Workforce Management Overhaul</h3>
-          <div class="work-metric">25% Rework Reduction · 18% On-Time Improvement</div>
-          <p>Overhauled multi-state scheduling operations at Tesla — standardizing processes, reengineering staffing logic, and building the forecasting infrastructure that sustained quality at scale.</p>
+          <div class="work-metric">25% Rework Reduction &nbsp;&middot;&nbsp; 18% On-Time Improvement</div>
+          <p>Overhauled multi-state scheduling operations at Tesla &mdash; standardizing processes, reengineering staffing logic, and building the forecasting infrastructure that sustained quality at scale across a $6M operation.</p>
           <ul class="work-bullets">
             <li>Reduced scheduling rework by 25%+ through process standardization</li>
             <li>Raised on-time installation rates by 18% via improved capacity forecasting</li>
-            <li>Built cross-functional alignment across Engineering, Sales, and Service</li>
+            <li>Led 4 supervisors and 40+ staff across multiple time zones</li>
           </ul>
         </div>
 
         <div class="work-card reveal">
-          <div class="work-num">Project 04</div>
+          <div class="work-num">06</div>
           <h3>Leadership Pipeline Development</h3>
-          <div class="work-metric">Supervisory Development · Culture Transformation</div>
-          <p>Designed and deployed enterprise mentorship, performance evaluation, and feedback systems that created a measurable supervisory pipeline and built leaders who could sustain results independently.</p>
+          <div class="work-metric">Leader of Leaders &nbsp;&middot;&nbsp; Culture Transformation</div>
+          <p>Designed and deployed enterprise mentorship, performance evaluation, and KPI frameworks that built durable supervisory pipelines and sustained results independently &mdash; at Freedom Forever, Tesla, and the USMC.</p>
           <ul class="work-bullets">
-            <li>Enterprise mentorship program with measurable supervisory outcomes</li>
-            <li>Performance systems that drove consistent, durable behavioral change</li>
-            <li>Culture programs that lifted Glassdoor ratings by a full point company-wide</li>
+            <li>Enterprise mentorship programs with measurable supervisory advancement outcomes</li>
+            <li>KPI and OKR frameworks adopted company-wide at Freedom Forever</li>
+            <li>Glassdoor employee satisfaction lifted 3.2 &#8594; 4.1 through culture development</li>
           </ul>
         </div>
 
@@ -931,7 +621,7 @@
     </div>
   </section>
 
-  <!-- ── SKILLS ── -->
+  <!-- SKILLS -->
   <section class="skills-section" id="skills">
     <div class="section-inner">
       <div class="section-counter reveal">03 / Skills &amp; Capabilities</div>
@@ -944,12 +634,12 @@
           <ul class="skills-list">
             <li>Contact Center Leadership</li>
             <li>Voice of the Customer (VOC)</li>
-            <li>NPS Strategy &amp; Turnarounds</li>
+            <li>NPS / CSAT Strategy &amp; Turnarounds</li>
             <li>Omnichannel CX Management</li>
-            <li>Customer Experience Design</li>
-            <li>Reputation &amp; Review Management</li>
-            <li>Escalation &amp; Issue Resolution</li>
-            <li>SLA Design &amp; Enforcement</li>
+            <li>Online Reputation Management</li>
+            <li>Offshore BPO Management</li>
+            <li>Vendor Contract Negotiation</li>
+            <li>Crisis &amp; Media Communications</li>
             <li>TCPA / FCC Compliance</li>
           </ul>
         </div>
@@ -961,23 +651,23 @@
             <li>Scheduling Operations</li>
             <li>Capacity Planning &amp; Forecasting</li>
             <li>KPI Framework Design</li>
-            <li>Process Engineering</li>
-            <li>Operating Model Design</li>
+            <li>Process Optimization &amp; Automation</li>
+            <li>Customer Self-Service Enablement</li>
             <li>Performance Management</li>
             <li>OKR &amp; Goal Architecture</li>
-            <li>Leadership Development</li>
+            <li>Leader of Leaders Development</li>
           </ul>
         </div>
 
         <div class="skills-group reveal">
           <h4>Technology &amp; Tools</h4>
           <ul class="skills-list">
+            <li>Anthropic Claude Agent SDK</li>
             <li>Power BI &amp; Tableau</li>
             <li>Zendesk</li>
             <li>Salesforce</li>
             <li>Dialpad</li>
-            <li>Smartsheet</li>
-            <li>SharePoint</li>
+            <li>Smartsheet &amp; SharePoint</li>
             <li>ZoomInfo</li>
             <li>Google Workspace</li>
             <li>Microsoft 365</li>
@@ -988,15 +678,13 @@
     </div>
   </section>
 
-  <!-- ── CONTACT ── -->
+  <!-- CONTACT -->
   <section class="contact-section" id="contact">
     <div class="contact-inner">
       <div class="section-counter reveal">04 / Let's Connect</div>
-      <h2 class="section-title reveal">
-        Open to the right role.
-      </h2>
+      <h2 class="section-title reveal">Open to the right role.</h2>
       <p class="contact-desc reveal">
-        Targeting senior roles in contact center leadership, customer operations, workforce management, and voice of the customer strategy. Remote preferred — Charlotte, NC metro.
+        Targeting senior roles in contact center leadership, customer operations, workforce management, and voice of the customer strategy. Remote preferred &mdash; Charlotte, NC metro.
       </p>
 
       <div class="contact-links reveal">
@@ -1020,15 +708,15 @@
 
       <div class="contact-ctas reveal">
         <a href="mailto:ty.trippany@gmail.com" class="btn-primary">Send Email</a>
-        <a href="Ty_Trippany_Resume_v2.pdf" class="btn-secondary" download>↓ Download Resume</a>
+        <a href="Ty_Trippany_Master_Resume.pdf" class="btn-secondary" download>&#8595; Download Resume</a>
       </div>
     </div>
   </section>
 
-  <!-- ── FOOTER ── -->
+  <!-- FOOTER -->
   <footer>
     <span>Ty Trippany &nbsp;/&nbsp; Director of Customer Operations</span>
-    <span>Charlotte, NC · Open to Remote</span>
+    <span>Charlotte, NC &nbsp;&middot;&nbsp; Open to Remote</span>
   </footer>
 
   <script>
@@ -1058,5 +746,4 @@
     })();
   </script>
 
-</body>
-</html>
+</bo
